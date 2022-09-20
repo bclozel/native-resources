@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+	id("org.graalvm.buildtools.native") version "0.9.13"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+graalvmNative {
+	binaries {
+		main {
+			mainClass = "org.example.Main"
+			quickBuild = true
+		}
+	}
+}
